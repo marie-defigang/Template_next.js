@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+  className: "nginx"
+  corsAllowOrigin: "http://localhost:3000"
+  host: 768-gladwin-tech-admin.k8s.pixelplex-test.by
+
+nodeConfigEnv: "develop"
+landingUrl: "https://768-gladwin-tech.k8s.pixelplex-test.by"
+cabinetUrl: "https://768-gladwin-tech-cabinet.k8s.pixelplex-test.by"
+apiUrl: "https://768-gladwin-tech-admin.k8s.pixelplex-test.by"
+sentryDsn: "https://ff40fc31501e4ba3b1e8081fd81383ec@sentry.pixelplex.by/96"
+btcNetwork: "testnet"
+
+restartPod: true

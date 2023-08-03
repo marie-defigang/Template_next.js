@@ -1,0 +1,31 @@
+@import '../../../assets/scss/helpers/variables';
+
+.buttons {
+  display: flex;
+  margin-top: 24px;
+
+  .submitButton {
+    margin-right: 8px;
+  }
+}
+
+.icon {
+  height: 40px;
+  margin-right: 10px;
+  width: 40px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.titleBox {
+  align-items: center;
+  display: flex;
+  margin-bottom: 8px;
+
+  h3 {
+    margin-top: 0;
+  }
+}

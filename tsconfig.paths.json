@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@abi/*": [
+        "abi/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@containers/*": [
+        "containers/*"
+      ],
+      "@contexts/*": [
+        "contexts/*"
+      ],
+      "@contracts/*": [
+        "contracts/*"
+      ],
+      "@helpers/*": [
+        "helpers/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@dto/*": [
+        "dto/*"
+      ],
+      "@state/*": [
+        "state/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@types/*": [
+        "types/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@validators/*": [
+        "validators/*"
+      ],
+      "@connectors/*": [
+        "connectors/*"
+      ]
+    }
+  }
+}

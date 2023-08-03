@@ -1,0 +1,44 @@
+stages:
+  - 🚦 test
+  - 📦 build
+  - 👀 review
+  - 🚀 deploy
+  - 📫 delivery
+
+.service-image-build:
+  extends: .image-build-frontend
+  variables:
+    EXTRA_ARGS: "--opt build-arg:BUILD_BRANCH=$BRANCH"
+    IMAGE: ${CI_REGISTRY_IMAGE}
+    CONTEXT: .
+    BRANCH: ${CI_COMMIT_REF_NAME}
+
+.deploy:
+  stage: 🚀 deploy
+  allow_failure: true
+  needs: [ 📦 build ]
+  trigger:
+    include:
+      - '.gitlab-ci/prepare-deploy.yml'
+      - '.gitlab-ci/services.yml'
+      - project: 'full-stack/devops'
+        file: Helm-Deploy-Template.yml
+    strategy: depend
+
+.review:
+  variables:
+    DEPLOY_ENV: develop
+  extends: .deploy
+  trigger:
+    include: 
+      - '.gitlab-ci/prepare-review.yml'
+      - '.gitlab-ci/services.yml'
+      - project: 'full-stack/devops'
+        file: Helm-Deploy-Template.yml
+    strategy: depend
+
+include:
+  - project: '768-gladwin-tech/768-gladwin-tech-cicd'
+    file: 'Gladwin-cicd-files.yaml'
+  - '.gitlab-ci/build.yml'
+  - '.gitlab-ci/tests.yml'

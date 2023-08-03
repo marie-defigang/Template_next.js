@@ -1,0 +1,152 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.wrap {
+  .labelContainer {
+    @include caption-m();
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+
+    .label {
+      color: $neutral1;
+      text-transform: uppercase;
+    }
+  }
+
+  .dropdownContainer {
+    height: 52px;
+    position: relative;
+    width: 100%;
+
+    .resultWrapper {
+      @include body-m(400);
+      background: rgba($neutral1, 0.1);
+      color: $neutral1;
+      height: 100%;
+      line-height: 25px;
+      min-width: auto;
+      padding: 13px 16px;
+      width: 100%;
+
+      > span {
+        color: $neutral4;
+      }
+
+      &:hover {
+        background: rgba($neutral1, 0.2);
+      }
+
+      &:disabled {
+        background-color: $neutral8;
+        color: $neutral4;
+      }
+
+      &.isActive {
+        background: rgba($neutral1, 0.1);
+        caret-color: $primary1;
+        outline: none;
+
+        > span {
+          color: $neutral5;
+        }
+      }
+
+      &.isError {
+        border-color: $secondary3;
+
+        &::placeholder {
+          color: $neutral5;
+        }
+      }
+    }
+
+
+    .disabled {
+      background-color: $neutral11;
+      box-shadow: none;
+      color: rgba($neutral1, 0.2);
+
+      svg {
+        path {
+          fill: rgba($neutral1, 0.2);
+        }
+      }
+    }
+
+    .dropdownMenu {
+      @include scrollBar();
+      padding: 10px 0;
+      width: 100% !important;
+
+      &:global(.scrolling.menu) {
+        background: $neutral10;
+        border-radius: 0 !important;
+        color: $neutral1;
+        margin-top: 8px !important;
+        max-height: 365px !important;
+        position: absolute;
+      }
+
+      .dropdownItem {
+        color: $neutral1;
+        height: 39px;
+        width: 100%;
+
+        &:hover {
+          background: rgba($neutral1, 0.1);
+          color: $neutral1;
+        }
+
+        &:global(.disabled) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+
+  :global {
+    i.dropdown.icon {
+      display: none;
+    }
+
+    .ui.selection.active.dropdown .menu {
+      border-color: $primary1;
+    }
+
+    .ui.default.dropdown:not(.button) > .text,
+    .ui.dropdown:not(.button) > .default.text {
+      color: $neutral5;
+    }
+  }
+
+  .errorText {
+    @include body-s(400, $secondary3);
+    margin-top: 8px;
+  }
+
+  .iconRight {
+    align-items: center;
+    display: inline-flex;
+    pointer-events: none;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+  .description {
+    @include body-s(400, $neutral4);
+    margin-top: 8px;
+  }
+}
+
+.wrapError {
+  :global {
+    .ui.selection.active.dropdown .menu {
+      border-color: $secondary3;
+    }
+  }
+}
+

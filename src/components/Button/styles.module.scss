@@ -1,0 +1,500 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.wrap {
+  :global {
+    .ui.button {
+      border-radius: 0;
+    }
+  }
+
+  .button {
+    @include dFlex();
+    color: $neutral1;
+    margin: 0;
+    position: relative;
+    transition: opacity 0.3s;
+
+    &:not(.loading)::before {
+      content: '';
+      height: calc(100% + 8px);
+      left: -4px;
+      outline: 1.5px dashed transparent;
+      position: absolute;
+      width: calc(100% + 8px);
+    }
+
+    .children {
+      display: flex;
+    }
+
+    .iconLeft {
+      @include dFlex();
+      margin-right: 6px;
+    }
+
+    .iconRight {
+      @include dFlex();
+      margin-left: 6px;
+    }
+
+    &:disabled {
+      svg {
+        fill-opacity: 0.5;
+      }
+    }
+
+    svg {
+      path {
+        fill: $neutral1;
+      };
+    }
+
+    &:active &:not(:disabled) {
+      svg {
+        stroke: rgba($secondary1, 0.7);
+      }
+    }
+
+    &.large {
+      @include button-l();
+      background: $primary1;
+      color: $neutral1;
+      height: 80px;
+      padding: 26px 40px;
+
+      &:hover {
+        box-shadow: 0 4px 20px rgba($primary1, 0.5);
+      }
+
+      &:active {
+        background: $primary3;
+        box-shadow: none;
+        color: rgba($secondary1, 0.7);
+      }
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+    }
+
+    &.medium {
+      @include button-m();
+      background: $primary1;
+      color: $neutral1;
+      height: 50px;
+      justify-content: center;
+      padding: 13px 32px;
+
+      &:hover {
+        box-shadow: 0 2px 12px rgba($primary1, 0.5);
+      }
+
+      &:active {
+        background: $primary3;
+        box-shadow: none;
+        color: rgba($secondary1, 0.7);
+      }
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+    }
+
+    &.small {
+      @include button-s();
+      background: $primary1;
+      color: $neutral1;
+      height: 40px;
+      padding: 8px 20px;
+
+      &:hover {
+        box-shadow: 0 2px 10px rgba($primary1, 0.5);
+      }
+
+      &:active {
+        background: $primary3;
+        box-shadow: none;
+        color: rgba($secondary1, 0.7);
+      }
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+    }
+
+    &.secondary {
+      background: rgba($neutral1, 0.2);
+      color: $neutral1;
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+
+      &.large {
+        padding: 26px 40px;
+      }
+
+      &.medium {
+        padding: 13px 32px;
+      }
+
+      &.small {
+        padding: 8px 20px;
+      }
+
+      svg {
+        path {
+          fill: $neutral1;
+        }
+      }
+
+      &:hover {
+        background: rgba($neutral1, 0.15);
+        border-color: rgba($neutral1, 0.15);
+        box-shadow: none;
+        color: $neutral1;
+
+        svg {
+          path {
+            fill: rgba($neutral1, 0.9);
+          }
+        }
+      }
+
+      &:active {
+        background: rgba($neutral1, 0.1);
+        border-color: rgba($neutral1, 0.1);
+        color: $neutral1;
+      }
+    }
+
+
+    &.white {
+      background: rgba($neutral1, 0.2);
+      color: $neutral1;
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+
+      &.large {
+        padding: 26px 40px;
+      }
+
+      &.medium {
+        padding: 13px 32px;
+      }
+
+      &.small {
+        padding: 8px 20px;
+      }
+
+      svg {
+        path {
+          stroke: $neutral1;
+        };
+      }
+
+      &:hover {
+        background: rgba($neutral1, 0.15);
+        border-color: rgba($neutral1, 0.15);
+        box-shadow: none;
+        color: $neutral1;
+      }
+
+      &:active {
+        background: rgba($neutral1, 0.1);
+        border-color: rgba($neutral1, 0.1);
+        color: $neutral1;
+      }
+    }
+
+    &.loading {
+      background: $primary1;
+      cursor: auto;
+
+      &:disabled {
+        background: $primary1;
+      }
+
+      &:hover,
+      &:active {
+        background: $primary1;
+        box-shadow: none;
+      }
+
+      .children {
+        color: transparent;
+      }
+
+      .loader {
+        &::after {
+          border-color: adjust-color($neutral3) transparent transparent !important;
+        }
+
+        &::before {
+          border-color: $neutral1 !important;
+        }
+      }
+
+      :global {
+        .ui.loader::after,
+        .ui.loader::before {
+          bottom: 0;
+          height: inherit;
+          left: 0;
+          margin: 0;
+          right: 0;
+          top: 0;
+          width: inherit;
+        }
+      }
+
+      &.small {
+        :global {
+          .ui.loader {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+
+      &.medium {
+        :global {
+          .ui.loader {
+            height: 30px;
+            width: 30px;
+          }
+        }
+      }
+
+      &.large {
+        :global {
+          .ui.loader {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      background-color: rgba($neutral1, 0.1);
+      border: 0;
+      color: rgba($neutral1, 0.2);
+      opacity: 1 !important;
+
+      .loader {
+        &::after {
+          border-color: adjust-color($neutral1) transparent transparent !important;
+        }
+
+        &::before {
+          border-color: rgba($neutral1, 0.2) !important;
+        }
+      }
+    }
+
+    &.square {
+      backdrop-filter: blur(2px);
+      background: $primary1;
+      border: 2px solid $primary1;
+      height: 40px;
+      padding: 10px;
+      width: 40px;
+
+      &:active {
+        background: $primary3;
+        border: 2px solid $primary3;
+      }
+
+      &:focus-visible {
+        &::before {
+          outline: 1.5px dashed $primary1;
+        }
+      }
+
+      &:disabled {
+        background: rgba($neutral1, 0.1);
+        border: 2px solid rgba($neutral1, 0);
+
+        svg {
+          path {
+            stroke: rgba($neutral1, 0.5);
+          };
+        }
+      }
+
+      &.secondary {
+        background: $neutral8;
+        border: 2px solid rgba($neutral1, 0.5);
+        padding: 10px;
+
+        &:hover {
+          border: 2px solid $primary1;
+
+          svg {
+            path {
+              stroke: $primary1;
+            }
+          }
+        }
+
+        &:active {
+          border: 2px solid $primary2;
+
+          svg {
+            path {
+              stroke: $primary2;
+            }
+          }
+        }
+
+        &:disabled {
+          border: 2px solid rgba($neutral1, 0.1);
+
+          svg {
+            path {
+              stroke: rgba($neutral1, 0.5);
+            };
+          }
+        }
+
+        &:focus-visible {
+          border: 2px solid $primary1;
+
+          svg {
+            path {
+              stroke: $primary1;
+            }
+          }
+
+          &::before {
+            outline: 1.5px dashed $primary1;
+          }
+        }
+      }
+
+      &.white {
+        background: $neutral8;
+        border: 2px solid rgba($neutral1, 0.5);
+        padding: 10px;
+
+        &:hover {
+          border: 2px solid $primary1;
+
+          svg {
+            path {
+              stroke: $primary1;
+            }
+          }
+        }
+
+        &:active {
+          border: 2px solid $primary2;
+
+          svg {
+            path {
+              stroke: $primary2;
+            }
+          }
+        }
+
+        &:disabled {
+          border: 2px solid rgba($neutral1, 0.1);
+
+          svg {
+            path {
+              stroke: rgba($neutral1, 0.5);
+            };
+          }
+        }
+
+        &:focus-visible {
+          border: 2px solid $primary1;
+
+          svg {
+            path {
+              stroke: $primary1;
+            }
+          }
+
+          &::before {
+            outline: 1.5px dashed $primary1;
+          }
+        }
+      }
+    }
+
+    &.withoutBorder {
+      background: transparent;
+      border-width: 0;
+      color: $primary1;
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+
+      svg {
+        path {
+          stroke: $primary1;
+        };
+      }
+
+      .children {
+        color: $primary1;
+      }
+
+      &:hover {
+        background: transparent;
+        box-shadow: none;
+
+        .children {
+          color: $primary2;
+        }
+
+        svg {
+          path {
+            stroke: $primary2;
+          };
+        }
+      }
+
+      &:active {
+        background: transparent;
+        color: $primary3;
+
+        .children {
+          color: $primary3;
+        }
+
+        svg {
+          path {
+            stroke: $primary3;
+          };
+        }
+      }
+
+      &:disabled {
+        color: rgba($primary1, 0.5);
+      }
+    }
+  }
+}
+
+.childrenWrap {
+  @include dFlex();
+  flex-shrink: 0;
+  width: 100%;
+}

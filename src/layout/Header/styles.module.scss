@@ -1,0 +1,117 @@
+@import '../../assets/scss/helpers/variables';
+@import '../../assets/scss/helpers/mixins/all';
+
+.header {
+  @include dFlex(center, space-between);
+  margin: 0 auto;
+  max-width: 1680px;
+  min-height: 80px;
+  padding: 0 40px;
+  position: relative;
+  width: 100%;
+  z-index: $zIndexHeader;
+
+  @include media-breakpoint-down($breakpointLg) {
+    padding: 0 20px;
+  }
+
+  @include media-breakpoint-down($breakpointMd) {
+    min-height: 56px;
+  }
+
+  .logo {
+    img {
+      width: 114px;
+
+      @include media-breakpoint-down($breakpointMd) {
+        width: 91px;
+      }
+    }
+  }
+
+  .box {
+    @include dFlex();
+    width: 100%;
+
+    @include media-breakpoint-down($breakpointLg) {
+      display: none;
+    }
+  }
+}
+
+.notificationButton,
+.burgerButton {
+  display: none;
+  margin: 0;
+  position: relative;
+
+  @include media-breakpoint-down($breakpointLg) {
+    @include dFlex();
+    height: 40px;
+    width: 40px;
+  }
+
+  svg {
+    @include dFlex();
+    height: auto;
+    margin: 0 auto;
+    width: 24px;
+
+    path {
+      stroke: $neutral1;
+    }
+  }
+}
+
+.burgerButton {
+  svg {
+    path {
+      stroke-width: 3;
+    }
+  }
+}
+
+.headerIconBox {
+  display: none;
+  @include media-breakpoint-down($breakpointLg) {
+    @include dFlex();
+  }
+}
+
+.notificationButton {
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  width: unset;
+
+  .notificationIcon {
+    background: rgba($neutral1, 0.2);
+    height: 30px;
+    position: relative;
+    width: 30px;
+  }
+
+  .amount {
+    @include dFlex();
+    @include caption-s(500, $neutral5);
+    background: $neutral1;
+    border-radius: 50%;
+    bottom: -6px;
+    box-shadow: 0 0 8px 1px rgba(30, 240, 120, 0.75);
+    font-size: 12px;
+    height: 22px;
+    position: absolute;
+    right: -8px;
+    width: 22px;
+
+    &.amountActive {
+      background: $primary1;
+      color: $neutral1;
+    }
+  }
+
+  svg {
+    padding: 4px;
+    width: unset;
+  }
+}

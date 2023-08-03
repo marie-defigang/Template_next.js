@@ -1,0 +1,63 @@
+@import './../variables';
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}
+
+@mixin dFlex($ai: center, $jc: center) {
+  align-items: $ai;
+  display: flex;
+  justify-content: $jc;
+}
+
+@mixin container() {
+  margin: 0 auto;
+  max-width: 1520px;
+  position: relative;
+  width: calc(100% - 80px);
+
+  @include media-breakpoint-down($breakpointMd) {
+    min-width: 280px;
+    width: calc(100% - 40px);
+  }
+}
+
+@mixin textEllipsis($maxWidth: 100%) {
+  max-width: $maxWidth;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@mixin scrollBar($track: $neutral7, $thumb: $neutral4) {
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+  }
+}
+
+@mixin successIcon() {
+  height: 80px;
+  position: relative;
+  width: 80px;
+
+  img {
+    height: 110px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+  }
+}

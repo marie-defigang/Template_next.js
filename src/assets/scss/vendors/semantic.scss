@@ -1,0 +1,49 @@
+@import '../../../assets/scss/helpers/variables';
+@import '../../../assets/scss/helpers/mixins/all';
+
+.ui.grid > .row {
+  padding: 0;
+}
+
+.ui.grid > .row > .column {
+  padding: 0;
+}
+
+.ui.stackable.grid > {
+  .column.row > .column {
+    padding: 0 !important;
+  }
+
+  .row > .column {
+    padding: 0 !important;
+  }
+}
+
+.ui.placeholder.segment {
+  padding: 0;
+}
+
+.ui.segment {
+  background: rgba($neutral1, 0.1);
+  border-radius: 0;
+}
+
+.menuBox {
+  :global {
+    .ui.secondary.menu {
+      background-color: $neutral1;
+      border-radius: 0;
+      margin: 0;
+      padding: 32px 32px 24px;
+    }
+
+    .ui.menu .item {
+      flex: 1 1;
+      padding: 0;
+
+      @include media-breakpoint-down($breakpointMd) {
+        align-self: flex-start;
+      }
+    }
+  }
+}

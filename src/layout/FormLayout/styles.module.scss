@@ -1,0 +1,90 @@
+@import '../../assets/scss/helpers/variables';
+@import '../../assets/scss/helpers/mixins/all';
+
+.container {
+  @include dFlex();
+  @include  scrollBar($neutral4, $neutral5);
+  background: $gradient2;
+  min-height: 100vh;
+  overflow: hidden auto;
+  position: relative;
+
+  @include media-breakpoint-down($breakpointLg) {
+    padding-right: 0;
+  }
+
+  @include media-breakpoint-down($breakpointMd) {
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+  .formContainer {
+    @include dFlex();
+    flex-direction: column;
+    width: 440px;
+
+    @include media-breakpoint-down($breakpointSm) {
+      width: 300px;
+    }
+
+    .formInner {
+      backdrop-filter: blur(15px);
+      background: rgba($neutral1, 0.1);
+      box-shadow: 0 10px 50px rgba($neutral7, 0.8);
+      padding: 40px 30px;
+      width: 420px;
+
+      @include media-breakpoint-down($breakpointSm) {
+        padding: 16px;
+      }
+    }
+
+    .logo {
+      margin-bottom: 50px;
+
+      @include media-breakpoint-down($breakpointXl) {
+        margin: 30px 0;
+      }
+
+      @include media-breakpoint-down($breakpointMd) {
+        margin: 20px 0;
+      }
+    }
+
+    .formHeader {
+      @include title-caps(500, $neutral1);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      @include body-l(500, $neutral4);
+      line-height: 20px;
+      margin-bottom: 20px;
+      margin-top: 0;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down($breakpointSm) {
+        @include body-m(500, $neutral4);
+      }
+    }
+  }
+
+
+  &.success {
+    .formInner {
+      padding-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 0;
+      margin-top: 20px;
+    }
+
+    .formHeader {
+      margin-bottom: 0;
+    }
+  }
+
+
+}

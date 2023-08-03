@@ -1,0 +1,76 @@
+/* stylelint-disable selector-max-id */
+@import './vendors/normalize';
+@import './helpers/fonts';
+@import './helpers/variables';
+@import './helpers/mixins/all';
+
+html,
+body,
+#__next {
+  background: $neutral6;
+  height: 100%;
+}
+
+body,
+button {
+  font-family: $defaultFontFamily;
+
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+
+.ui.dimmer {
+  background-color: rgba($neutral6, 0.3);
+}
+
+// overwrite toast styles
+.Toastify__toast {
+  border-radius: 0;
+  font-family: $defaultFontFamily;
+  min-height: 44px;
+  padding: 16px;
+
+  @include media-breakpoint-down($breakpointSm) {
+    margin-bottom: 14px;
+  }
+}
+
+.Toastify__toast-container {
+  bottom: 75px;
+  height: fit-content;
+  padding: 0;
+  width: fit-content;
+
+  @include media-breakpoint-down($breakpointSm) {
+    bottom: 20px;
+  }
+}
+
+.Toastify__toast-body {
+  margin: 0;
+  padding: 0;
+}
+
+.Toastify__toast-container--bottom-center {
+  @include media-breakpoint-down($breakpointSm) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

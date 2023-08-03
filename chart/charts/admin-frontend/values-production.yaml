@@ -1,0 +1,26 @@
+ingress:
+  enabled: true
+  className: "nginx"
+  corsAllowOrigin: "http://localhost:3000" 
+  host: admin.pega-pool.com
+  tls:
+    - hosts:
+       - admin.pega-pool.com
+      secretName: admin-pega-pool-com
+
+apiUrl: "https://admin.pega-pool.com"
+landingUrl: "https://app.pega-pool.com"
+cabinetUrl: "https://user.pega-pool.com"
+sentryDsn: "https://ff40fc31501e4ba3b1e8081fd81383ec@sentry.pixelplex.by/96"
+nodeConfigEnv: "production"
+btcNetwork: "mainnet"
+
+resources: 
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+restartPod: true

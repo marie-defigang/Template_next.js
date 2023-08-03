@@ -1,0 +1,10 @@
+@import '../../../assets/scss/helpers/variables';
+@import '../../../assets/scss/helpers/mixins/all';
+
+.btn {
+  margin-left: 12px;
+}
+
+.box {
+  @include dFlex();
+}

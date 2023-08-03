@@ -1,0 +1,254 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.wrap {
+  .labelContainer {
+    @include caption-m();
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+
+    .maxValue {
+      @include caption-s(400, $neutral4);
+    }
+
+    .label {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .container {
+    position: relative;
+
+    .inputWrapper {
+      width: 100%; // don't remove
+      input {
+        @include body-m(400, $neutral1);
+        background-color: rgba($neutral1, 0.1);
+        border: 1px solid transparent;
+        border-radius: 0;
+        color-scheme: dark;
+        height: 50px;
+        padding: 13px 16px;
+
+        &::placeholder {
+          color: rgba($neutral1, 0.5);
+        }
+
+        &:hover {
+          background-color: rgba($neutral1, 0.2);
+          color: rgba($neutral1, 0.5);
+        }
+
+        &:disabled {
+          background-color: $neutral8;
+          border: 1px solid rgba($neutral1, 0.1);
+          color: rgba($neutral1, 0.1);
+        }
+
+        &:focus {
+          background-color: $neutral9;
+          border-color: transparent;
+          box-shadow: 0 1px 0 0 rgba($primary1, 0.5);
+          caret-color: $neutral1;
+          outline: none;
+
+          &::placeholder {
+            color: rgba($neutral1, 0.5);
+          }
+        }
+
+        &:active {
+          background: $neutral9;
+          box-shadow: 0 1px 0 0 rgba($neutral1, 0.5);
+          color: $neutral1;
+        }
+      }
+
+      input:-webkit-autofill {
+        border: 1px solid $neutral9;
+        box-shadow: 0 0 0 60px $neutral9 inset;
+        -webkit-text-fill-color: $neutral1;
+        transition: background-color 600000s 0s, color 600000s 0s;
+      }
+    }
+
+    .search {
+      input {
+        background: transparent;
+        border-color: transparent;
+        padding: 7px 16px 7px 40px;
+
+        &:hover {
+          border-width: 1px;
+        }
+
+        &:disabled {
+          border-width: 1px;
+        }
+
+        &:focus {
+          border-width: 1px;
+        }
+      }
+    }
+
+    .paddingIcon {
+      input {
+        padding-right: 36px;
+      }
+    }
+
+    .paddingSendCode {
+      input {
+        padding-right: 110px;
+      }
+    }
+
+    .inputCopy {
+      opacity: 1;
+
+      input {
+        padding-right: 55px;
+
+        &:disabled {
+          background-color: rgba($neutral1, 0.1) !important;
+          border-color: transparent;
+          color: rgba($neutral1, 0.5) !important;
+          cursor: text;
+          opacity: 1;
+          pointer-events: auto !important;
+        }
+      }
+    }
+
+    .activityIcon {
+      margin-left: 16px;
+
+      &:hover {
+        outline: none;
+      }
+    }
+
+    .closeIcon {
+      transform: scale(0.6);
+
+      path {
+        fill: $neutral4;
+      };
+
+      &:hover {
+        path {
+          stroke: rgba($neutral1, 0.5);
+        };
+      }
+    }
+
+    .hoveredIcon {
+      cursor: pointer;
+
+      &:hover {
+        path {
+          fill: rgba($neutral1, 0.5);
+        };
+      }
+    }
+
+    .loader {
+      margin-left: -4px;
+    }
+
+    .inputWrapper.inputError input {
+      background: rgba(240, 30, 30, 0.1) !important;
+      border: 2px solid $secondary3;
+      box-shadow: none;
+      color: $neutral1;
+
+      &::placeholder {
+        color: rgba($neutral1, 0.5);
+      }
+    }
+
+    .inputError {
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        border: 1px solid $secondary2;
+        box-shadow: 0 0 0 1000px #F01E1E19 inset;
+        color: $neutral1;
+        -webkit-text-fill-color: $neutral1;
+        transition: background-color 5000s ease-in-out 0s;
+
+        &::placeholder {
+          color: rgba($neutral1, 0.5);
+        }
+      }
+    }
+  }
+
+  .send {
+    @include body-s-bold(600, $primary1);
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .awaitTime {
+    display: inline-block;
+    margin-left: 2px;
+    width: 35px;
+  }
+
+  .sendGray {
+    @include body-s-bold(600, (rgba($neutral1, 0.2)));
+    color: $neutral4;
+    text-transform: uppercase;
+  }
+
+  .sendLoader {
+    margin-right: 20px;
+  }
+
+  .iconLeft {
+    align-items: center;
+    display: inline-flex;
+    left: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .iconRight {
+    align-items: center;
+    display: inline-flex;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .errorText {
+    @include body-s();
+    color: $secondary3;
+    margin-top: 8px;
+  }
+
+  .description {
+    @include body-s(400, $neutral4);
+    margin-top: 8px;
+  }
+}
+
+.errorAbsolute {
+  position: absolute;
+
+  &.errorText {
+    margin-top: 0;
+  }
+}
+
+.copyBox {
+  @include body-s(400, $primary1);
+  text-transform: uppercase;
+}

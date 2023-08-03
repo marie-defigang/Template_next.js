@@ -1,0 +1,79 @@
+@import '../../../assets/scss/helpers/variables';
+@import '../../../assets/scss/helpers/mixins/all';
+
+.box {
+  backdrop-filter: blur(15px);
+  background: $neutral7 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 50px rgba($neutral7, 0.8) !important;
+  max-width: 464px;
+  padding: 32px;
+  width: 100%;
+
+
+  .closeButton {
+    height: 24px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 24px;
+
+    svg {
+      path {
+        fill: $neutral4;
+      }
+    }
+  }
+
+  .step {
+    @include overline-label();
+    color: $primary1;
+  }
+
+  .title {
+    @include h3();
+    margin: 8px 0;
+    text-transform: uppercase;
+  }
+
+  .description {
+    @include body-m(400, $neutral4);
+    margin-bottom: 8px;
+  }
+
+  .text {
+    @include body-m();
+    margin-bottom: 8px;
+  }
+
+  .textBold {
+    @include body-m-bold();
+    margin-bottom: 24px;
+  }
+
+  .wrapButtons {
+    display: grid;
+    grid-gap: 0 8px;
+    grid-template-areas: 'CancelBtn ConfirmBtn';
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn {
+    margin-top: 24px;
+  }
+}
+
+.recommendation {
+  @include body-s(400, $neutral4);
+
+  p {
+    line-height: 22px;
+  }
+}
+
+.line {
+  background-color: $neutral4;
+  height: 1px;
+  margin: 24px 0;
+  width: 100%;
+}

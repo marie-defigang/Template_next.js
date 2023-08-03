@@ -1,0 +1,14 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.loader {
+  &::after {
+    border-color: adjust-color(rgba($neutral1, 0.2)) transparent transparent !important;
+    border-width: 2px !important;
+  }
+
+  &::before {
+    border-color: $primary2 !important;
+    border-width: 2px !important;
+  }
+}
+

@@ -1,0 +1,137 @@
+@import '../../assets/scss/helpers/variables';
+@import '../../assets/scss/helpers/mixins/all';
+
+.footer {
+  @include dFlex(center, space-between);
+  bottom: 0;
+  flex: 0 0 auto;
+  min-height: 80px;
+  padding: 0 40px;
+  width: 100%;
+  z-index: $zIndexFooter;
+
+  @include media-breakpoint-down($breakpointLg) {
+    min-height: 184px;
+    padding: 20px;
+  }
+
+  @include media-breakpoint-down($breakpointMd) {
+    min-height: 260px;
+  }
+
+  @include media-breakpoint-down($breakpointSm) {
+    padding: 20px 26px 30px;
+  }
+}
+
+.container {
+  @include body-s();
+  @include dFlex(center, space-between);
+  margin: 0 auto;
+  max-width: 1680px;
+  width: 100%;
+
+  @include media-breakpoint-down($breakpointLg) {
+    flex-direction: column;
+  }
+}
+
+.menu {
+  @include media-breakpoint-down($breakpointLg) {
+    border-bottom: 1px dashed $neutral4;
+    order: -1;
+    padding-bottom: 26px;
+    width: 100%;
+  }
+
+  .menuList {
+    display: flex;
+
+    @include media-breakpoint-down($breakpointLg) {
+      display: grid;
+      grid-row-gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0;
+    }
+  }
+
+  .row {
+    display: inline-flex;
+    width: 100%;
+
+    @include media-breakpoint-down($breakpointLg) {
+      flex-direction: column;
+    }
+
+    &:last-child {
+      .menuItem {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .menuItem {
+    margin-right: 40px;
+    width: 100%;
+
+    @include media-breakpoint-down($breakpointLg) {
+      margin-right: 0;
+    }
+
+    .link {
+      @include body-s();
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      &:hover {
+        color: $primary2;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+
+  @include media-breakpoint-down($breakpointLg) {
+    order: 1;
+    padding-top: 26px;
+  }
+
+  .socialItem {
+    @include dFlex();
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    .link {
+      @include dFlex();
+
+      svg {
+        path {
+          fill: $primary1;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: $primary2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  @include dFlex();
+
+  @include media-breakpoint-down($breakpointLg) {
+    order: 2;
+    padding-top: 18px;
+  }
+}

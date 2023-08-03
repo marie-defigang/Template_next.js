@@ -1,0 +1,48 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.toastBody {
+  @include dFlex();
+  @include body-m(400, $neutral1);
+}
+
+.wrapBody {
+  @include dFlex(center, flex-start);
+
+  .icon {
+    @include dFlex();
+    margin-right: 12px;
+  }
+
+  &.default {
+    color: $primary1;
+  }
+}
+
+.toastBox {
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 50px rgba($neutral7, 0.8) !important;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 12px 16px;
+  width: fit-content;
+}
+
+.toast-container-success {
+  background-color: rgba($primary1, 0.5) !important;
+}
+
+.toast-container-error {
+  background-color: rgba($secondary3, 0.5) !important;
+}
+
+.toast-container-default,
+.toast-container-info {
+  background-color: rgba($neutral7, 0.5) !important;
+}
+
+.toast-container-default {
+  cursor: default !important;
+}
+
+
+

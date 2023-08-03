@@ -1,0 +1,85 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.link {
+  align-items: center;
+  color: $primary1;
+  display: flex;
+  outline: none;
+  padding: 1px 4px;
+  position: relative;
+  text-align: center;
+  transition: all 250ms ease-out;
+
+  &.small {
+    @include input-link-s();
+  }
+
+  &.medium {
+    @include input-link-m();
+  }
+
+  .imageRight,
+  .imageLeft {
+    svg {
+      transition: all 250ms ease-out;
+
+      path {
+        fill: $primary1;
+      }
+    }
+  }
+
+  &:hover {
+    &.small,
+    &.medium,
+    .buttonText {
+      color: $primary2;
+    }
+
+    .imageRight,
+    .imageLeft {
+      svg {
+        path {
+          fill: $primary2;
+        }
+      }
+    }
+  }
+
+  &:focus-visible {
+    border: 1.5px dashed $primary1;
+    border-radius: 2px;
+  }
+
+  &:focus-visible,
+  &:focus {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.disabled {
+    color: $primary1;
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.imageRight,
+.imageLeft {
+  align-items: center;
+  display: inline-flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+}
+
+.buttonText {
+  margin-left: 12px;
+}
+
+.imageRight {
+  margin-left: 8px;
+}

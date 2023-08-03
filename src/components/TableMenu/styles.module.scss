@@ -1,0 +1,87 @@
+@import '@assets/scss/helpers/mixins/all';
+@import '@assets/scss/vendors/semantic';
+
+.menuBox {
+  border-bottom: 1px solid $neutral7;
+
+  &.isFirstTabActive {
+    border-radius: 0 8px;
+  }
+
+  :global {
+    .ui.menu::after {
+      display: none;
+    }
+  }
+
+  .heading {
+    @include dFlex(flex-start, center);
+    flex-direction: column;
+
+    .headingInner {
+      @include dFlex();
+
+      .titleIcon {
+        height: 40px;
+        margin-right: 20px;
+        width: 40px;
+      }
+    }
+
+    .title {
+      @include h3($neutral1, 400);
+      display: inline-flex;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+    }
+
+    .subTitle {
+      @include body-m(400, $neutral4);
+      margin-top: 8px;
+
+      @include media-breakpoint-down($breakpointMd) {
+        @include body-s(400, $neutral4);
+      }
+    }
+  }
+
+  .inputBox {
+    position: relative;
+    @include media-breakpoint-down($breakpointMd) {
+      margin: 12px 0 !important;
+    }
+
+    input {
+      width: 130px;
+    }
+
+    .fillInput {
+      input {
+        width: 245px;
+      }
+    }
+
+    input:focus {
+      transition: width 0.3s;
+      width: 245px;
+    }
+  }
+
+  &.isFirstTabActive {
+    border-radius: 0 8px;
+  }
+
+  :global {
+    .ui.secondary.menu {
+      background-color: rgba($neutral1, 0.1);
+      border-radius: 0;
+    }
+
+    .ui.menu .item {
+      border: unset;
+      border-radius: unset;
+      user-select: unset;
+    }
+  }
+}

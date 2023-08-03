@@ -1,0 +1,26 @@
+@import '../../../assets/scss/helpers/variables';
+@import '../../../assets/scss/helpers/mixins/all';
+
+.box {
+  @include dFlex();
+  margin-top: 50px;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down($breakpointMd) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .title {
+    @include subtitle-light();
+  }
+
+  .link {
+    @include subtitle-light($neutral1, 700);
+    text-transform: uppercase;
+
+    &:hover {
+      color: $primary1;
+    }
+  }
+}

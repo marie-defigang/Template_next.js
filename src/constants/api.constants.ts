@@ -1,0 +1,1 @@
+export const API_KEY_WALLET_CONNECT_V2 = 'c93fe081aa41f4416b442a88408218bc';

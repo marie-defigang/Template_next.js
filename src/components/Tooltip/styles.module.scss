@@ -1,0 +1,29 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.trigger {
+  backdrop-filter: blur(15px) !important;
+  background-color: unset !important;
+  border-radius: 0 !important;
+  border-width: 0 !important;
+  box-shadow: 0 10px 50px rgba($neutral7, 0.8);
+  margin-top: 8px !important;
+  padding: 0 !important;
+
+  :global .content {
+    @include caption-s(400, $neutral1);
+    background: rgba($neutral7, 0.5);
+    max-width: 310px;
+    padding: 16px !important;
+    white-space: break-spaces;
+    word-break: break-word;
+  }
+
+  :global .ui.top.left.popup {
+    margin-left: 10px;
+  }
+}
+
+.triggerContent {
+  cursor: pointer;
+  display: inline-flex;
+}

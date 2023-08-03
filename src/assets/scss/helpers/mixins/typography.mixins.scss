@@ -1,0 +1,269 @@
+@import '../variables';
+@import '../mixins/grid.mixins';
+
+@mixin h0($color: $neutral1, $fontWeight: 400) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 96px;
+  font-weight: $fontWeight;
+  line-height: 96px;
+}
+
+@mixin h1($color: $neutral1, $fontWeight: 400) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 38px;
+  font-weight: $fontWeight;
+  line-height: 56px;
+
+  @include media-breakpoint-down($breakpointMd) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@mixin h2($color: $neutral1, $fontWeight: 400) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 36px;
+  font-weight: $fontWeight;
+  line-height: 44px;
+
+  @include media-breakpoint-down($breakpointMd) {
+    font-size: 28px;
+  }
+}
+
+@mixin h3($color: $neutral1, $fontWeight: 400) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 28px;
+  font-weight: $fontWeight;
+  line-height: 34px;
+
+  @include media-breakpoint-down($breakpointMd) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@mixin h4($fontWeight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 20px;
+  font-weight: $fontWeight;
+  line-height: 26px;
+}
+
+@mixin subtitle-1($color: $neutral1, $fontWeight: 400) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 20px;
+  font-weight: $fontWeight;
+  line-height: 30px;
+}
+
+@mixin subtitle-2($color: $neutral1, $fontWeight: 500) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 20px;
+  font-weight: $fontWeight;
+  line-height: 30px;
+}
+
+@mixin subtitle-light($color: $neutral1, $fontWeight: 300) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 12px;
+  font-weight: $fontWeight;
+  line-height: 15px;
+}
+
+@mixin input-label($color: $neutral1, $fontWeight: 600) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: $fontWeight;
+  line-height: 30px;
+}
+
+@mixin body-l($fontWeight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 18px;
+  font-weight: $fontWeight;
+  line-height: 28px;
+}
+
+@mixin body-l-bold($fontWeight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 18px;
+  font-weight: $fontWeight;
+  line-height: 28px;
+}
+
+@mixin body-m($fontWeight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: $fontWeight;
+  line-height: 18px;
+}
+
+@mixin body-m-bold($fontWeight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: $fontWeight;
+  line-height: 18px;
+}
+
+@mixin body-s($fontWeight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: $fontWeight;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+}
+
+@mixin body-s-bold($fontWeight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: $fontWeight;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+}
+
+@mixin button-l($font-weight: 700, $color: $neutral1) {
+  font-family: $defaultFontFamily;
+  font-size: 18px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+@mixin button-m($font-weight: 700, $color: $neutral1) {
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+@mixin button-s($font-weight: 700, $color: $neutral1) {
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+@mixin overline-label($fontWeight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: $fontWeight;
+  letter-spacing: 0.75px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@mixin caption-m($font-weight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+}
+
+@mixin caption-s($font-weight: 400, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: $font-weight;
+  line-height: 16px;
+}
+
+@mixin title-caps($font-weight: 500, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 26px;
+  font-weight: $font-weight;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+@mixin subtitle-caps($font-weight: 500, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 18px;
+  font-weight: $font-weight;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+@mixin tabs-caps($font-weight: 500, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 16px;
+  font-weight: $font-weight;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+@mixin text-bold-caps($font-weight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 14px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@mixin header-caps($font-weight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 16px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@mixin header-caps-s($font-weight: 600, $color: $neutral1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 14px;
+  font-weight: $font-weight;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@mixin input-link-s($color: $primary1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+@mixin input-link-m($color: $primary1) {
+  color: $color;
+  font-family: $defaultFontFamily;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+  text-transform: uppercase;
+}

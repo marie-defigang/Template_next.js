@@ -1,0 +1,28 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.noResult {
+  @include dFlex();
+  @include h3($neutral1, 400);
+  background-color: rgba($neutral1, 0.1);
+  cursor: default;
+  height: 194px;
+  position: relative;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down($breakpointSm) {
+    font-size: 18px;
+  }
+
+  .inner {
+    @include dFlex();
+    flex-direction: column;
+  }
+
+  svg {
+    @include dFlex();
+    height: 40px;
+    margin-bottom: 8px;
+    opacity: 0.5;
+    width: 40px;
+  }
+}

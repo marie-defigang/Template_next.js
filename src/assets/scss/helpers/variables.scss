@@ -1,0 +1,41 @@
+$primary1: #0FCB97;
+$primary2: #0FAE82;
+$primary3: #07674D;
+$primary4: #1EF078;
+
+$secondary1: #E7FAF5;
+$secondary2: #FDE4E3;
+$secondary3: #FF453A;
+
+$neutral1: #FFF;
+$neutral2: #000;
+$neutral3: #E2E2E2;
+$neutral4: #888;
+$neutral5: #515151;
+$neutral6: #1E1E1E;
+$neutral7: #000;
+$neutral8: #000;
+$neutral9: #111;
+$neutral10: #1A1A1A;
+$neutral11: #222;
+
+$gradient1: radial-gradient(64.29% 64.29% at 100% 0%, #0A503C 0%, #000 100%);
+$gradient2: radial-gradient(94.63% 122.91% at 100% 0%, #074F3B 0%, #000 63.91%);
+$gradient3: linear-gradient(90deg, rgba(54, 72, 67, 1) 0%, rgba(56, 88, 80, 1) 62%, rgba(57, 100, 88, 1) 100%);
+$gradient4: linear-gradient(90deg, rgba(52, 52, 52, 1) 0%, rgba(54, 61, 59, 1) 72%, rgba(54, 74, 70, 1) 100%);
+
+$breakpointXxxsl: 1680px;
+$breakpointXxl: 1440px;
+$breakpointXl: 1280px;
+$breakpointLg: 1024px;
+$breakpointMd: 768px;
+$breakpointSm: 480px;
+$breakpointXs: 360px;
+
+// Fonts
+$defaultFontFamily: 'Montserrat', sans-serif;
+
+//Z-index
+$zIndexHeader: 2;
+$zIndexMain: 1;
+$zIndexFooter: 1;

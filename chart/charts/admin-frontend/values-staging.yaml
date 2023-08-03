@@ -1,0 +1,18 @@
+ingress:
+  enabled: true
+  className: "nginx"
+  corsAllowOrigin: "http://localhost:3000" 
+  host: admin.staging.pega-pool.com
+  tls:
+    - hosts:
+       - admin.staging.pega-pool.com
+      secretName: admin-staging-pega-pool-com
+
+apiUrl: "https://admin.staging.pega-pool.com"
+landingUrl: "https://app.staging.pega-pool.com"
+cabinetUrl: "https://user.staging.pega-pool.com"
+sentryDsn: "https://ff40fc31501e4ba3b1e8081fd81383ec@sentry.pixelplex.by/96"
+nodeConfigEnv: "staging"
+btcNetwork: "mainnet"
+
+restartPod: true

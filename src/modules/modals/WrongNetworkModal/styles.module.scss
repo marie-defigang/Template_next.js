@@ -1,0 +1,38 @@
+@import '../../../assets/scss/helpers/variables';
+@import '../../../assets/scss/helpers/mixins/all';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  display: flex;
+}
+
+.buttonWrap {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  width: 50%;
+}
+
+.warningWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

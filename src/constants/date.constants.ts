@@ -1,0 +1,4 @@
+export const DATE_FORMAT = {
+  YEAR_MONTH_DATE_TIME: 'YYYY-MM-DD HH:mm',
+  YEAR_MONTH_DATE: 'YYYY-MM-DD',
+};

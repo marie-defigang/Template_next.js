@@ -1,0 +1,13 @@
+version: '3.4'
+x-restart-policy: &restart_policy
+  restart: unless-stopped
+
+services:
+  front:
+    image: $IMAGE
+    << : *restart_policy
+    environment:
+      - NODE_CONFIG_ENV
+      - SENTRY_DSN=https://ff40fc31501e4ba3b1e8081fd81383ec@sentry.pixelplex.by/96
+    ports:
+      - "${WEB_PORT}:3000"

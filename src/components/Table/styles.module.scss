@@ -1,0 +1,184 @@
+@import '@assets/scss/helpers/mixins/all';
+
+.root {
+  :global {
+    .ui.table {
+      background: unset;
+      border-radius: 0;
+      border-width: 0;
+      margin: 0;
+    }
+
+    .ui.table tbody tr {
+      background: rgba($neutral1, 0.1);
+    }
+
+    .ui.table tr td {
+      border-bottom: 1px solid $neutral7;
+      border-top: 0;
+    }
+
+    .ui.table tfoot th {
+      border-top: 1px solid $neutral7;
+    }
+
+    .ui.table thead th {
+      background: rgba($neutral1, 0.1);
+      border-bottom: 1px solid $neutral7;
+      color: $neutral1;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      text-transform: uppercase;
+
+      &:first-child {
+        border-radius: 0 !important;
+        padding-left: 32px;
+
+        @include media-breakpoint-down($breakpointSm) {
+          padding-left: 8px;
+        }
+      }
+
+      &:last-child {
+        border-radius: 0 !important;
+        padding-right: 32px;
+
+        @include media-breakpoint-down($breakpointSm) {
+          padding-right: 8px;
+        }
+      }
+    }
+
+    .ui.table tfoot th {
+      background: rgba($neutral1, 0.1);
+      padding: 0;
+    }
+  }
+
+  :global {
+    tbody {
+      .row {
+        background: rgba($neutral1, 0.1);
+        height: 48px;
+        padding: 12px 32px;
+      }
+    }
+  }
+
+  .cell {
+    @include body-m(400, $neutral1);
+
+    &.empty {
+      color: $neutral4;
+    }
+
+    &:first-child {
+      padding-left: 32px;
+    }
+
+    &:last-child {
+      padding-right: 32px;
+    }
+
+    &.pointer {
+      cursor: pointer;
+
+      &.accentCell {
+        a:hover {
+          color: $primary2;
+        }
+      }
+    }
+
+    &.accentCell {
+      color: $primary1;
+    }
+  }
+
+  .headerCell {
+    box-shadow: none;
+
+    .title {
+      align-items: center;
+      display: inline-flex;
+      text-transform: uppercase;
+    }
+
+    &.cellRight {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .alignLeft {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    &.cellSortable {
+      * {
+        @include body-s-bold();
+        font-size: 14px;
+      }
+
+      .sortIcon {
+        height: 12px;
+        margin-left: 4px;
+        width: 12px;
+      }
+
+      &:hover {
+        * {
+          color: $primary1;
+        }
+
+        .sortIcon {
+          path {
+            stroke: $primary1;
+          }
+        }
+      }
+
+      &:hover {
+        * {
+          color: $primary1;
+        }
+
+        .sortIcon {
+          path {
+            stroke: $primary1;
+          }
+        }
+      }
+
+      .sortIcon {
+        path {
+          stroke: $neutral1;
+        }
+      }
+    }
+  }
+
+  .tooltipIcon {
+    margin-left: 4px;
+
+    path {
+      fill: rgba($neutral1, 0.5);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: $primary1;
+      }
+    }
+  }
+
+  .tableFooter {
+    height: 48px;
+    padding: 0;
+  }
+}

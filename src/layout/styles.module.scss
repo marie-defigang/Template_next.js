@@ -1,0 +1,76 @@
+@import '../assets/scss/helpers/variables';
+@import '../assets/scss/helpers/mixins/all';
+
+.root {
+  @include  scrollBar($neutral4, $neutral5);
+  background: $neutral7;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden auto;
+  position: relative;
+  scrollbar-gutter: stable;
+
+
+  &::after {
+    background: $gradient1;
+    content: '';
+    height: 100%;
+    max-height: 1200px;
+    overflow: hidden;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.main {
+  @include container();
+  flex: 1 0 auto;
+  z-index: $zIndexMain;
+}
+
+.sidebarBox {
+  overflow-x: initial;
+  position: relative;
+  transform: none !important;
+
+  :global {
+    .pushable > .pusher::after {
+      z-index: 99 !important;
+    }
+  }
+
+  :global {
+    .pusher.dimmed::after {
+      background: $neutral6;
+      opacity: 0.5 !important;
+    }
+  }
+
+  :global {
+    .pusher {
+      height: 100%;
+    }
+  }
+
+  :global {
+    .pushable > .ui.sidebar {
+      height: 100vh;
+      position: fixed !important;
+    }
+  }
+
+  :global .ui.sidebar {
+    position: fixed !important;
+  }
+
+  :global {
+    .ui.right.sidebar {
+      background: $gradient2;
+      border-width: 0;
+      width: 280px;
+    }
+  }
+}

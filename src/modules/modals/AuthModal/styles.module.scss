@@ -1,0 +1,30 @@
+@import '@assets/scss/helpers/variables';
+@import '@assets/scss/helpers/mixins/all';
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px
+}
+
+.connectButton {
+  @include dFlex();
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0.64;
+
+  svg {
+    @include dFlex();
+    width: 48px;
+    height: auto;
+  }
+
+  &:hover {
+    opacity: 1
+  }
+}
+
+.textBtn {
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
